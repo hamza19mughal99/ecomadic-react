@@ -1,0 +1,38 @@
+button.chakra-button.css-gb2den {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+
+button.chakra-button.css-gb2den:focus {
+    background: transparent !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.css-1mr4ysp {
+    background: #BCC482 !important;
+}
+
+a.chakra-link.css-6xja36 {
+    margin-right: 0;
+}
+
+nav.chakra-stack.css-n21gh5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+nav.chakra-stack.css-n21gh5 h5 {
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.header_menu {
+    background-color: #BCC482;
+}
