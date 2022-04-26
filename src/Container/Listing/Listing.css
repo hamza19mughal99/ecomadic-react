@@ -57,6 +57,7 @@
 .dollar {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .dollar svg {
@@ -69,11 +70,13 @@
     align-items: center;
     font-size: 15px;
     margin-left: 7px;
+    cursor: pointer;
 }
 
 .sustain {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .filter_div{

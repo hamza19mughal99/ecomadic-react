@@ -3,10 +3,8 @@
 }
 
 .pricing_container {
-    width: 50%;
+    width: 100%;
     padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .filters_container {
@@ -107,11 +105,11 @@
 }
 
 .price_container {
-    border: 1px solid grey;
+    border: 1px solid #8080804a;
     border-radius: 10px;
     padding: 10px 20px;
     width: 150px;
-
+    margin-top: 10px;
 }
 
 .price_container span {
@@ -213,33 +211,38 @@
     top: 3px;
 }
 
-.economic{
-    padding: 10px 20px;
+
+
+
+
+/*----------------------*/
+
+.environmental{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
 }
 
-
-.economic span {
-    margin-left: 10px;
+.environmental p{
     font-size: 18px;
-    font-weight: 500;
-}
-
-.economic input {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 3px;
-}
-
-.ecoIcon{
-    padding: 10px 10px;
-    color: white;
-    background: rgb(39, 41, 153);
-    border-radius: 50px;
-}
-
-.eco{
-    margin-left: 10px;
-    font-size: 20px;
     font-weight: 600;
+    margin-left: 10px;
+}
+
+label.chakra-checkbox.css-1lc114p {
+    margin: 10px 0;
+}
+
+.sustainable{
+    display: flex;
+    justify-content: space-between;
+}
+
+.css-1sgc0qu {
+    font-size: 15px;
+}
+
+.amenities_checkbox{
+    display: flex;
+    justify-content: space-between;
 }

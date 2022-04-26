@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { RangeSlider, RangeSliderTrack, RangeSliderFilledTrack, RangeSliderThumb } from '@chakra-ui/react'
+import "./ComponentsPages.css";
 
 const PriceRange = () => {
     const [value, setValue] = useState([10, 30])

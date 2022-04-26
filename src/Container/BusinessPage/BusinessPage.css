@@ -299,6 +299,8 @@ h4.css-1jw1hn6 {
 
 .inc_dec svg{
     margin: 0 5px;
+    color: #0009;
+    cursor: pointer;
 }
 
 .dropdown_option svg{

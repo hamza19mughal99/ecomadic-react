@@ -189,7 +189,6 @@ const BusinessPage = () => {
                                             : null
                                     }
                                 </div>
-
                             </div>
 
                             <div className={'req_btn'}>

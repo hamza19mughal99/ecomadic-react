@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Grid, GridItem} from '@chakra-ui/react'
+import {Grid, GridItem, Modal, ModalBody, ModalContent, ModalOverlay} from '@chakra-ui/react'
 import PopularFind from './PopularFind/PopularFind';
 import './Listing.css'
 import { FaSearch } from 'react-icons/fa';
@@ -9,12 +9,94 @@ import {FaDollarSign,FaFilter} from 'react-icons/fa';
 import {BsFillCalendarDayFill, BsPeopleFill} from "react-icons/bs";
 import DatePicker from "react-datepicker";
 import {MdLocationOn} from "react-icons/md";
+import {AiOutlineMinusCircle, AiOutlinePlusCircle} from "react-icons/ai";
+import PriceRange from "../../ComponentsPages/PriceRange";
+import Sustainable from "../../ComponentsPages/Sustainable";
+import Filter from "../../ComponentsPages/Filter";
 
 const Listing = () => {
     const [startDate, setStartDate] = useState<Date | null>(new Date());
+    const [listGuestShow, setListGuestShow] = useState(false)
+    const [adults, setAdults] = useState(0)
+    const [children, setChildren] = useState(0)
+    const [pets, setPets] = useState(0)
+    const [priceModal, setPriceModal] = useState(false)
+    const [sustainModal, setSustainModal] = useState(false)
+    const [filterModal, setFilterModal] = useState(false)
+
+    const modal = (
+        <Modal size={'sm'} onClose={() => setListGuestShow(false)} isOpen={listGuestShow} >
+            <ModalOverlay />
+            <ModalContent>
+                <ModalBody>
+                    <div className={'guests_modal'}>
+                        <p> Adults </p>
+                        <div className={'inc_dec'}>
+                            <AiOutlineMinusCircle onClick={() => setAdults(adults - 1)} />
+                            <input name="quantity" disabled type="text" className="quantity__input" value={adults} />
+                            <AiOutlinePlusCircle onClick={() => setAdults(adults + 1)} />
+                        </div>
+                    </div>
+                    <div className={'guests_modal'}>
+                        <p> Children </p>
+                        <div className={'inc_dec'}>
+                            <AiOutlineMinusCircle onClick={() => setChildren(children - 1)} />
+                            <input name="quantity" disabled type="text" className="quantity__input" value={children} />
+                            <AiOutlinePlusCircle onClick={() => setChildren(children + 1)} />
+                        </div>
+                    </div>
+                    <div className={'guests_modal'}>
+                        <p> Pets </p>
+                        <div className={'inc_dec'}>
+                            <AiOutlineMinusCircle onClick={() => setPets(pets - 1)} />
+                            <input name="quantity" disabled type="text" className="quantity__input" value={pets} />
+                            <AiOutlinePlusCircle onClick={() => setPets(pets + 1)} />
+                        </div>
+                    </div>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+    )
+
+    const price = (
+        <Modal size={'lg'} onClose={() => setPriceModal(false)} isOpen={priceModal} >
+            <ModalOverlay />
+            <ModalContent>
+                <ModalBody>
+                    <PriceRange />
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+    )
+
+    const sustain = (
+        <Modal size={'xl'} onClose={() => setSustainModal(false)} isOpen={sustainModal} >
+            <ModalOverlay />
+            <ModalContent>
+                <ModalBody>
+                    <Sustainable />
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+    )
+
+    const filter = (
+        <Modal size={'xl'} onClose={() => setFilterModal(false)} isOpen={filterModal} >
+            <ModalOverlay />
+            <ModalContent>
+                <ModalBody>
+                    <Filter />
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+    )
 
     return (
         <React.Fragment>
+            {modal}
+            {price}
+            {sustain}
+            {filter}
 
             <div className={'filter_div'} >
                 <div>
@@ -31,7 +113,7 @@ const Listing = () => {
 
                         <div className='border_right'>
                             <BsPeopleFill />
-                            <input className={'guest_input'} type="text" placeholder='2 guests' />
+                            <input onClick={() => setListGuestShow(true)} className={'guest_input'} type="text" placeholder='2 guests' />
                         </div>
 
                         <div className='search_container'> <FaSearch /> </div>
@@ -40,15 +122,15 @@ const Listing = () => {
                 </div>
                 <div>
                     <div className='amenites_container'>
-                        <div className='border_right dollar'>
+                        <div className='border_right dollar' onClick={() => setPriceModal(true)}>
                             <FaDollarSign />  Price
                         </div>
 
-                        <div className='border_right sustain'>
+                        <div className='border_right sustain' onClick={() => setSustainModal(true)}>
                             <RiPlantFill/> Sustainable Amenities
                         </div>
 
-                        <div className='filters'>
+                        <div className='filters' onClick={() => setFilterModal(true)}>
                             <FaFilter/>  More Filters
                         </div>
                     </div>
