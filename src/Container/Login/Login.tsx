@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, FormControl, FormLabel, Input} from '@chakra-ui/react';
+import {Link} from "react-router-dom";
 
 const Login = () => {
 
@@ -25,7 +26,7 @@ const Login = () => {
                         <button className="main_register">Login</button>
                     </div>
                     <p className={'sign_google'}>
-                        Don't Have account? SignUp
+                        Don't Have account?  <Link to='/sign-up'> SignUp </Link>
                     </p>
                 </form>
             </div>

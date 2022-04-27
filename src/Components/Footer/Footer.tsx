@@ -4,15 +4,7 @@ import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import "./Footer.css";
 import { FaSearch } from 'react-icons/fa'
 
-const SocialButton = ({
-    children,
-    label,
-    href,
-}: {
-    children: ReactNode;
-    label: string;
-    href: string;
-}) => {
+const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string; }) => {
     return (
         <chakra.button
             bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -46,9 +38,7 @@ const Footer = () => {
                     spacing={8}>
                     <Stack spacing={6}>
                         <Box>
-                            <Text fontSize={'lg'}>
-                                Ecomadic
-                            </Text>
+                            <Text fontSize={'lg'}> Ecomadic </Text>
                         </Box>
                         <Text fontSize={'sm'}>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error necessitatibus ducimus atque alias hic quis ab corporis fuga enim similique, veniam pariatur, possimus illum repudiandae accusamus deserunt odit, vitae numquam.
@@ -90,12 +80,8 @@ const Footer = () => {
                             <SocialButton label={'Linkedin'} href={'#'}>
                                 <FaLinkedin />
                             </SocialButton>
-                            <SocialButton label={'Instagram'} href={'#'}>
-                                <FaInstagram />
-                            </SocialButton>
-                            <SocialButton label={'Facebook'} href={'#'}>
-                                <FaFacebook />
-                            </SocialButton>
+                            <SocialButton label={'Instagram'} href={'#'}> <FaInstagram /> </SocialButton>
+                            <SocialButton label={'Facebook'} href={'#'}> <FaFacebook /> </SocialButton>
                         </Stack>
                     </Stack>
                 </SimpleGrid>

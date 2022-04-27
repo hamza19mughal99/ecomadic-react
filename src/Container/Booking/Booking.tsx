@@ -169,7 +169,6 @@ const Booking = () => {
                         <button onClick={() => setShow(true)} className={'filled_color confirm_btn'}>Confirm and Pay</button>
                     </div>
 
-
                 </div>
                 <div className={'booking_right'}>
 
@@ -216,12 +215,9 @@ const Booking = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </SimpleGrid>
         </React.Fragment>
-
     );
 };
-
 export default Booking;

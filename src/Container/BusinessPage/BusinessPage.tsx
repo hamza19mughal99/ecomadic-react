@@ -17,6 +17,7 @@ const BusinessPage = () => {
     const [startDate, setStartDate] = useState<Date | null>(new Date());
     const [showDropDown, setShowDropDown] = useState(false)
     const [showModal, setShowModal] = useState(false)
+    const [adults, setAdults] = useState(0)
 
     const images = [
         {
@@ -181,9 +182,9 @@ const BusinessPage = () => {
                                             <div className={'options'}>
                                                 <p> Adults </p>
                                                 <div className={'inc_dec'}>
-                                                    <AiOutlinePlusCircle />
-                                                    <input name="quantity" type="text" className="quantity__input" value="0" />
-                                                    <AiOutlineMinusCircle />
+                                                    <AiOutlineMinusCircle onClick={() => setAdults(adults - 1)} />
+                                                    <input name="quantity" type="text" className="quantity__input" value={adults} />
+                                                    <AiOutlinePlusCircle onClick={() => setAdults(adults + 1)}/>
                                                 </div>
                                             </div>
                                             : null
